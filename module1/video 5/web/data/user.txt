@@ -1,0 +1,5 @@
+image|username|password|name|status|key_cookie
+images/IMG_4707|admin|123456|Kim|1|
+|admin1|123|Tuan|1|
+|admin2|456|joey|1|
+|admin3|555|guest|0|

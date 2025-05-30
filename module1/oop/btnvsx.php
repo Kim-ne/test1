@@ -1,5 +1,5 @@
 <?php
-class nhanvien
+class nhanviensx
 {
     // khởi tạo tv
     var $ma;
@@ -7,24 +7,24 @@ class nhanvien
     var $gioitinh;
     var $ngaysinh;
     var $ngayvaolam;
-    var $socon;
-    var $songayvang;
-    var $hesoluong;
-    var $luongcoban = 4000000 ;
-    var $dinhmucvang = 12;
+    var $soluongsp;
+    var $tangca;
+    var $dinhmucsp = 1000;
+    var $dongia = 12000 ;
+    
 // xây dựng phương thức hỗ trọ
-    function __construct($ma,$ten,$gioitinh,$ngaysinh,$ngayvaolam,$socon,$songayvang,$hesoluong,$luongcoban,$dinhmucvang)
+    function __construct($ma,$ten,$gioitinh,$ngaysinh,$ngayvaolam,$soluongsp,$tangca)
     {
         $this->ma = $ma;
         $this->ten = $ten;
         $this->gioitinh = $gioitinh;
         $this->ngaysinh = $ngaysinh;
         $this->ngayvaolam = $ngayvaolam;
-        $this->socon = $socon;
-        $this->songayvang = $songayvang;
-        $this->hesoluong = $hesoluong;
-        $this->luongcoban = $luongcoban = 4000000;
-        $this->dinhmucvang = $dinhmucvang = 12;
+        $this->soluongsp = $soluongsp;
+        $this->tangca = $tangca;
+        // $this->dinhmucsp = $dinhmucsp = 1000;
+        // $this->dongia = $dongia = 12000;
+        
 
     }
 // xây dựng phương thức lơp
@@ -41,9 +41,9 @@ class nhanvien
 
     function trocap()
     {
-       if ($this->gioitinh == 'nu' && $this->socon > 2) 
+       if ($this->tangca == 'có') 
        {
-            return  1000000 * ($this->socon - 2);
+            return  1.05 * $this->luong();
        } else{
             return 0;
        }
@@ -51,19 +51,16 @@ class nhanvien
 
     function thuongphat()
     {
-        if($this->songayvang > $this->dinhmucvang)
-        {
-            $phat = ($this->songayvang - $this->dinhmucvang) * 100000;
-            return -$phat;
-        } else{
-            $thuong = ($this->dinhmucvang - $this->songayvang) * 100000;
-              return $thuong;
-        }
+        
+        return  ($this->soluongsp - $this->dinhmucsp) * 10000;
+    
+    
+        
     }
 
     function luong()
     {
-        return  $this->hesoluong * $this->luongcoban ;
+        return  $this->soluongsp * $this->dongia ;
     }
 
     function thucnhan()
@@ -87,22 +84,21 @@ class nhanvien
         echo '<br>';
         echo 'Ngày vào làm:' .$this->ngayvaolam;
         echo '<br>';
-        echo 'Số con:' .$this->socon;
+        echo 'Số lượng sp:' .$this->soluongsp;
         echo '<br>';
-        echo 'Số ngày vắng:' .$this->songayvang;
+        echo 'tăng ca:' .$this->tangca;
         echo '<br>';
-        echo 'Hệ số lương:' .$this->hesoluong;
+        echo 'Định mức sp:' .$this->dinhmucsp .'pcs';
         echo '<br>';
-        echo 'Lương cơ bản:' .$this->luongcoban .'đ';
+        echo 'Đơn giá:' .$this->dongia .'đ';
         echo '<br>';
-        echo 'Định mức vắng:' .$this->dinhmucvang;
-        echo '<br>';
+
         
     }
 
 }
 
-$nvK = new nhanvien('1','Kim','nam','08/08/1994','05/10/2022',socon: '0',songayvang: '3',hesoluong: '3',luongcoban: '',dinhmucvang: '');
+$nvK = new nhanviensx('1','Kim','nam','08/08/1994','05/10/2022','1100','có');
 $nvK->xem();
 echo 'số tiền trợ cấp: ' .$nvK->trocap() .'đ';
 echo '<br>';
@@ -112,7 +108,7 @@ echo 'lương: ' .$nvK->luong() .'đ';
 echo '<br>';
 echo $nvK->thucnhan() .'<br><br>';
 
-$nvM = new nhanvien('2','M','nu','08/08/1994','05/10/2022',socon: '3',songayvang: '13',hesoluong: '3.5',luongcoban: '',dinhmucvang: '');
+$nvM = new nhanviensx('2','M','nu','08/08/1994','05/10/2022','900','không');
 $nvM->xem();
 echo 'số tiền trợ cấp: ' .$nvM->trocap() .'đ';
 echo '<br>';

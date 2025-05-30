@@ -23,8 +23,8 @@ class nhanvien
         $this->socon = $socon;
         $this->songayvang = $songayvang;
         $this->hesoluong = $hesoluong;
-        $this->luongcoban = $luongcoban = 4000000;
-        $this->dinhmucvang = $dinhmucvang = 12;
+        // $this->luongcoban = $luongcoban = 4000000;
+        // $this->dinhmucvang = $dinhmucvang = 12;
 
     }
 // xây dựng phương thức lơp
@@ -51,14 +51,15 @@ class nhanvien
 
     function thuongphat()
     {
-        if($this->songayvang > $this->dinhmucvang)
-        {
-            $phat = ($this->songayvang - $this->dinhmucvang) * 100000;
-            return -$phat;
-        } else{
-            $thuong = ($this->dinhmucvang - $this->songayvang) * 100000;
-              return $thuong;
-        }
+        // if($this->songayvang > $this->dinhmucvang)
+        // {
+        //     $phat = ($this->songayvang - $this->dinhmucvang) * 100000;
+        //     return -$phat;
+        // } else{
+        //     $thuong = ($this->dinhmucvang - $this->songayvang) * 100000;
+        //       return $thuong;
+        // }
+        return ($this->songayvang - $this->dinhmucvang)*100000;
     }
 
     function luong()
@@ -68,11 +69,12 @@ class nhanvien
 
     function thucnhan()
     {
-       $luong = $this->luong();
-       $trocap = $this->trocap();
-       $thuongphat = $this->thuongphat();
-       $thucnhan = $luong + $trocap + $thuongphat;
-       return 'Thực nhận: ' .$thucnhan .'đ';
+    //    $luong = $this->luong();
+    //    $trocap = $this->trocap();
+    //    $thuongphat = $this->thuongphat();
+    //    $thucnhan = $luong + $trocap + $thuongphat;
+    //    return 'Thực nhận: ' .$thucnhan .'đ';
+        return ($this->luong()+$this->trocap()+$this->thuongphat());
     }
 
     function xem()
@@ -102,7 +104,7 @@ class nhanvien
 
 }
 
-$nvK = new nhanvien('1','Kim','nam','08/08/1994','05/10/2022',socon: '0',songayvang: '3',hesoluong: '3',luongcoban: '',dinhmucvang: '');
+$nvK = new nhanvien('1','Kim','nam','08/08/1994','05/10/2022',socon: '0',songayvang: '3',hesoluong: '3');
 $nvK->xem();
 echo 'số tiền trợ cấp: ' .$nvK->trocap() .'đ';
 echo '<br>';
@@ -112,7 +114,7 @@ echo 'lương: ' .$nvK->luong() .'đ';
 echo '<br>';
 echo $nvK->thucnhan() .'<br><br>';
 
-$nvM = new nhanvien('2','M','nu','08/08/1994','05/10/2022',socon: '3',songayvang: '13',hesoluong: '3.5',luongcoban: '',dinhmucvang: '');
+$nvM = new nhanvien('2','M','nu','08/08/1994','05/10/2022',socon: '3',songayvang: '13',hesoluong: '3.5');
 $nvM->xem();
 echo 'số tiền trợ cấp: ' .$nvM->trocap() .'đ';
 echo '<br>';

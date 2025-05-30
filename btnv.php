@@ -13,7 +13,7 @@ class nhanvien
     var $luongcoban = 4000000 ;
     var $dinhmucvang = 12;
 // xây dựng phương thức hỗ trọ
-    function __construct($ma,$ten,$gioitinh,$ngaysinh,$ngayvaolam,$socon,$songayvang,$hesoluong)
+    function __construct($ma,$ten,$gioitinh,$ngaysinh,$ngayvaolam,$socon,$songayvang,$hesoluong,$luongcoban,$dinhmucvang)
     {
         $this->ma = $ma;
         $this->ten = $ten;

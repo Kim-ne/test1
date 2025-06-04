@@ -519,5 +519,6 @@ $nvK->xem();
 // test margin
 //test pull
 $nvL = new nhanviensx('3','leo','male','23/12/2028','10/9/2048','1200','co');
+// test
 ?>
 

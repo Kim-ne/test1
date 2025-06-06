@@ -515,12 +515,6 @@ $nvK->xem();
 
 // $nvK->ten = 'Khác';
 // $nvK->xemten();
-
-// test margin
-//test pull
-
-// test margin
-//test pull
-$nvL = new nhanviensx('3','leo','male','23/12/2028','10/9/2048','1200','co');
-// test dev 1g
+//demo 1
 ?>
+

@@ -1,0 +1,9 @@
+image|username|password|name|status|key_cookie
+images/IMG_4707|admin|123456|Kim|1|
+|admin1|123|Tuan|1|
+|admin2|456|joey|1|
+|admin3|555|guest|0|
+123|123|123|123|1|
+images/user/file_1747322338.jpg|ssss|aa|aa|0|sdd
+images/user/file_1747577047.png|1123||Kim|1|546
+images/user/file_0_1747668901.jpg;images/user/file_1_1747668901.jpg;images/user/file_2_1747668901.jpg|1234||111|0|233
